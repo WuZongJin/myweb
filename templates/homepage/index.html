@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://www.yyets.com/ -->
+<html class="chrome webkit win desktop UI&amp;UE&amp;FE.by.ayin86(at)163.com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dps的个人导航</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.min.css'%}">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+<script src="{%static 'js/jquery-1.11.1.min.js'%}"></script>
+<script src="{%static 'js/bootstrap.js'%}"></script>
+<script>
+	if($("html").hasClass("desktop")){
+		$('[data-toggle="tooltip"]').tooltip()
+		$(".logo").on("dblclick",function(){
+		  $(document).mousemove(function(e){
+			var x = e.clientX-document.body.clientWidth/2;
+			var y = e.clientY-document.body.clientHeight/2;
+		  
+			  var w = window.innerWidth;
+			  $('.full-box').css('transform', 'translateZ(100px) perspective(1000px) rotateX('+-y/80+'deg) rotateY('+x/80+'deg)')
+			  $('.box-mark').css('box-shadow', -x/30+'px '+-y/30+'px 20px rgba(0,0,0,.3)');
+			
+		  });
+	  })
+	}
+  </script>
+</head>
+<body class="page-mobile">
+	<div class="full-box">
+		<div class="center-stage" id="center-stage">
+			<div class="logo-wrapper">
+				<img src="{%static 'images/title.jpg'%}" alt="" class="logo">
+				<!--<p class="desc chs">人人影视</p><p class="desc site">YYETS.COM</p>-->
+			</div>
+			<div class="row row-top">
+				<div class="col-top col-xs-4">
+					<div class="row row-2nd">
+						<div class="col-mark col-xs-12">
+							<div class="box-mark box-n1 box-h1" onclick="window.open(&#39;http://www.bilibili.com&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击进入B站">
+								<p class="title">bilibili</p>
+								<p class="desc">bilibili视频网站</p>
+								<p class="desc">死宅追番看剧的天堂</p>
+								<i class="fa fa-play-circle" style="font-size:54px;"></i>
+							</div>
+						</div>
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n3 box-h1" onclick="window.open(&#39;https://www.zhihu.com&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击进入知乎">
+								<p class="title">知乎</p>
+								<p class="desc">发现新的世界</p>
+							</div>
+						</div>
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n2 box-h1" onclick="window.open(&#39;https://cn.bing.com&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="必应搜索">
+								<p class="title">掘金</p>
+								<p class="desc">帮助开发者成长的社区</p>
+								
+							</div>
+						</div>
+						<div class="col-mark col-xs-12">
+							<div class="box-mark box-n4 box-h1" onclick="window.open(&#39;https://itunes.apple.com/cn/app/%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86%E5%AD%97%E5%B9%95%E7%BB%84/id1052761459?mt=8&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击进入D站">
+								<p class="title">dilidili</p>
+								<p class="desc">dilidili视频网站</p>
+								<p class="desc">嘀哩嘀哩，不用会员的追番网站</p>
+								<i class="fa fa-play-circle-o" style="font-size:54px;"></i>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-top col-xs-4">
+					<div class="row">
+						<div class="col-mark col-xs-12">
+							<div class="box-mark box-n5 box-h2" onclick="window.open(&#39;&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击访问我的项目">
+								<span class="titlechs">我的项目<span class="eng">zimuzu.io</span></span>
+								<p class="desc">个人项目展示</p>
+							</div>
+						</div>
+						
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n6 box-h1" onclick="window.open(&#39;https://wuzongjin.github.io&#39;)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="点击进入我的博客">
+								<p class="title">博客</p>
+								<p class="desc">我的个人博客</p>
+								<i class="fa fa-user-circle"></i>
+							</div>
+						</div>
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n7 box-h1" onclick="window.open(&#39;https://github.com/&#39;)" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="点击进入Github">
+								<p class="title">Github</p>
+								<p class="desc">全球最大的开源社区</p>
+								<i class="fa fa-github" style="font-size:48px"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-top col-xs-4">
+					<div class="row row-3rd">
+						<div class="col-mark col-xs-12">
+							<div class="box-mark box-n8 box-h1" onclick="window.open(&#39;http://www.runoob.com/&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击直接下载">
+								<p class="title">菜鸟教程</p>
+								<p class="desc">各种教程</p>
+								<i class="fa fa-file-code-o"></i>
+								
+							</div>
+						</div>
+						<div class="col-mark col-xs-12">
+							<div class="box-mark box-n9 box-h1" onclick="window.open(&#39;https://cn.bing.com/&#39;)" data-toggle="tooltip" data-placement="top" title="" data-original-title="点击直接下载">
+								<p class="title">必应</p>
+								<p class="desc">微软必应搜索</p>
+								<i class="fa fa-desktop"></i>
+							</div>
+						</div>
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n10 box-h1" >
+								<p class="title">联系方式</p>
+								<p class="desc">欢迎前来学习交流</p>
+								<div class="mail"><i class="fa fa-qq" style="font-size:36px;"></i>
+									<p>QQ：1395080043</p>
+									<p>欢迎前来骚扰</p>
+								</div>
+								<i class="fa fa-handshake-o"></i>
+							</div>
+						</div>	
+						
+						<div class="col-mark col-xs-6">
+							<div class="box-mark box-n11 box-h1" >
+								<p class="title">AboutMe</p>
+								<p class="desc">一个学生</p>
+								<i class="fa fa-address-card-o"></i>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+			<div class="copyright">陕西师范大学 计科院 软工 <div class="fr">snnu.edu.cn</div></div>
+		</div>
+		<img class="full-bg" src="{%static 'images/bg.png'%}" alt="">
+	</div>
+	
+
+
+
+</body></html>
