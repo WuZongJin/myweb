@@ -1,0 +1,106 @@
+{% extends 'store/base.html' %}
+{% load staticfiles %}
+{% block content_block %}
+<div class="single">
+
+<div class="container">
+<div class="col-md-9">
+	<div class="col-md-5 grid">		
+		<div class="flexslider">
+			  <ul class="slides">
+			    <li data-thumb="{{ MEDIA_URL }}{{ product.image_url_l }}">
+			        <div class="thumb-image"> <img src="{{ MEDIA_URL }}{{ product.image_url_l }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="{{ MEDIA_URL }}{{ product.image_url_m }}">
+			         <div class="thumb-image"> <img src="{{ MEDIA_URL }}{{ product.image_url_m }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li>
+			    <li data-thumb="{{ MEDIA_URL }}{{ product.image_url_r }}">
+			       <div class="thumb-image"> <img src="{{ MEDIA_URL }}{{ product.image_url_r }}" data-imagezoom="true" class="img-responsive"> </div>
+			    </li> 
+			  </ul>
+		</div>
+	</div>	
+<div class="col-md-7 single-top-in">
+						<div class="single-para simpleCart_shelfItem">
+							<h1>{{ product.name }}</h1>
+							<p>{{ product.desc }}</p>
+							<div class="star-on">
+{#								<
+							<div class="clearfix"> </div>
+							</div>
+                                <label  class="add-to item_price">现价{{ product.price }}元</label>
+
+{#								<a href="#" class="cart item_add">放入购物车</a>#}
+                            <form action="{% url 'store:add_cart'%}" method="post" id="subform{{ clo.id }}">
+                                {% csrf_token %}
+                                <input type="hidden" name="chid" value="{{ clo.id }}">
+                                <a href="#" class="cart item_add" onclick="document.getElementById('subform{{ product.id }}').submit();">放入购物车</a>
+                             </form>
+                            </div>
+                        </div>
+			<div class="clearfix"> </div>
+</div>
+<!----->
+
+		<div class="clearfix"> </div>
+	</div>
+	</div>
+<!-- slide -->
+    <script src="{% static 'store/js/imagezoom.js' %}"></script>
+    <script src="{% static 'store/js/simpleCart.min.js' %}"></script>
+    <script src="{% static 'store/js/responsiveslides.min.js' %}"></script>
+    <script src="{% static 'store/js/memenu.js' %}"></script>
+<!-- start menu -->
+    <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+
+<!--initiate accordion-->
+						<script type="text/javascript">
+							$(function() {
+							    var menu_ul = $('.menu-drop > li > ul'),
+							           menu_a  = $('.menu-drop > li > a');
+							    menu_ul.hide();
+							    menu_a.click(function(e) {
+							        e.preventDefault();
+							        if(!$(this).hasClass('active')) {
+							            menu_a.removeClass('active');
+							            menu_ul.filter(':visible').slideUp('normal');
+							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+							        } else {
+							            $(this).removeClass('active');
+							            $(this).next().stop(true,true).slideUp('normal');
+							        }
+							    });
+							
+							});
+						</script>
+
+
+
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
+<!---pop-up-box---->
+    <!---//pop-up-box---->
+					 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+{% endblock %}

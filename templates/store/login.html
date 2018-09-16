@@ -1,16 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'store/base.html' %}
 {% load staticfiles %}
 {% block content_block %}
+
 <div class="account">
 	<div class="container">
 		<h1>登录</h1>
 		<div class="account_grid">
 			   <div class="col-md-6 login-right">
-				<form action="{% url 'login' %}" method="post">
+				<form action="{% url 'store:login' %}" method="post">
                     {% csrf_token %}
 					<span>用户名</span>
 					{{ login_form.username }}
-				
+
 					<span>密码</span>
 					{{ login_form.password }}
 					<div class="word-in">
@@ -19,14 +20,15 @@
 				 		<input type="submit" value="登录">
 				  	</div>
 			    </form>
-			   </div>	
+			   </div>
 			    <div class="col-md-6 login-left">
 			  	 <h4>还没有帐号？</h4>
 				 <p>申请一个新帐号就可以进行购物了哟</p>
-				 <a class="acount-btn" href="{% url 'register' %}">创建帐号</a>
+				 <a class="acount-btn" href="{% url 'store:register' %}">创建帐号</a>
 			   </div>
 			   <div class="clearfix"> </div>
 			 </div>
 	</div>
 </div>
+
 {% endblock %}

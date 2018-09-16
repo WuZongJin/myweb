@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from blog.feeds import AllPostsRssFeed
-
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('homepage.urls')),
@@ -24,5 +25,7 @@ urlpatterns = [
     url(r'', include('comments.urls')),
     #url(r'^robots\.txt$', lambda r: HttpResponse('User-agent: *\nDisallow: /', content_type='text/plain')),
     url(r'^search/', include('haystack.urls')),
-    url(r'^all/rss/$', AllPostsRssFeed(), name='rss'),
-]
+    url(r'^all/rss/', AllPostsRssFeed(), name='rss'),
+    url(r'store/', include('store.urls')),
+    url(r'^dejavu/', include('dejavu.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

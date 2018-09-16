@@ -1,0 +1,180 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/about.css'%}">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <title>个人简历</title>
+</head>
+<body>
+<div class="container-all">
+    <div class="container-main">
+        <div class="title">
+            <h1>个人简历</h1>
+        </div>
+        <div class="top-mask">
+        </div>
+        <div class="top-mask-right"></div>
+        <div class="box1"></div>
+        <div class="box-title">
+            <p>个人信息</p>
+        </div>
+        <div class="box-line-y"></div>
+        <div class="box-info">
+            <div class="row">
+
+                <div class="col-2" style="text-align: right;">
+                    <p>名字：</p>
+                </div>
+                <div class="col-2" style="text-align: left;">
+                    <p>吴宗锦</p>
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <p>出生日期：</p>
+                </div>
+                <div class="col-2" style="text-align: left;">
+                    <p>1996-10-16</p>
+                </div>
+                <div class="col-1"></div>
+                <div>
+                    <img class="myimg" src="{% static 'images/photo.jpg'%}" alt="" >
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-2" style="text-align: right;">
+                    <p>名族：</p>
+                </div>
+                <div class="col-2"style="text-align: left;">
+                   <p> 汉</p>
+                </div>
+                <div class="col-2" style="text-align: right;">
+                    <p>就读学校：</p>
+                </div>
+                <div class="col-3"style="text-align: left;">
+                    陕西师范大学
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-2"style="text-align: right;">
+                    <p>联系方式：</p>
+                </div>
+                <div class="col-2">
+                    <p>18229065977</p>
+                </div>
+                <div class="col-2"style="text-align: right;">
+                    <p>学历：</p>
+                </div>
+                <div class="col-2">
+                    <p>本科(未毕业)</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-title">
+            <p>教育经历</p>
+        </div>
+        <div class="box-line-y"></div>
+        <div class="box-educatin-info">
+            <div class="row">
+                <div class="col-3">
+                    <p>2016.09~2020.07</p>
+                </div>
+                <div class="col-3">
+                    <p>陕西师范大学</p>
+                </div>
+                <div class="col-3">
+                    <p>计算机科学（本科）</p>
+                </div>
+            </div>
+        </div>
+        <div class="box-title">
+            <p>专业技能</p>
+        </div>
+        <div class="box-line-y"></div>
+        <div class="box-skill">
+            <li>精通C/C++的运用与编程</li>
+            <li>熟悉运用python解决一般编程问题流程</li>
+            <li>熟悉HTML，CSS，JS前端技术的应用</li>
+            <li>熟悉Mysql，Sqlite等数据库在项目中的使用，以及数据表结构设计</li>
+            <li>精通java的运用以及运用java解决一般的编程问题</li>
+        </div>
+        <div class="box-title">
+            <p>项目经验</p>
+        </div>
+        <div class="box-line-y"></div>
+        <div class="box-project">
+            <div class="row">
+                <div class="col-3"style="text-align:right">
+                   <h5>●&nbsp;&nbsp;项目名称：</h5>
+                </div>
+                <div class="col-9">
+                    <p> <strong>人脸评分</strong>（网页端）</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-3"style="text-align:right">
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;项目介绍：</h5>
+                </div>
+                <div class="col-9">
+                    <p>基于人脸python的人脸识别库face_recognition以及Tensorflow开发的一个可以在网页上上传图片并返回由系统得出的分数的一个项目。
+                    </p>
+                </div>
+            </div>
+            <div style="height:50px;"></div>
+            <div class="row">
+                <div class="col-3"style="text-align:right">
+                    <h5>●&nbsp;&nbsp;项目名称：</h5>
+                </div>
+                <div class="col-9">
+                    <p> <strong>音乐识别</strong>（网页端）</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3"style="text-align:right">
+                    <h5>&nbsp;&nbsp;&nbsp;&nbsp;项目介绍：</h5>
+                </div>
+                <div class="col-9">
+                    <p>基于导师论文及相关论文材料，利用python实现的音乐识别项目，现在可以在网页上上传一段声音，可以匹配出数据库中最相近的音乐。
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="col-2"style="text-align:right">
+                    <strong>...</strong>
+                </div>
+            </div>
+        </div>
+        <div class="box-title">
+            <p>了解更多</p>
+        </div>
+        <div class="box-line-y"></div>
+        <div class="box-learnmore">
+            <div class="row">
+                <div class="col-2">
+                    Github个人主页:
+                </div>
+                <div class="col-10">
+                     <a href="https://github.com/WuZongJin"> https://github.com/WuZongJin</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                   个人博客:
+                </div>
+                <div class="col-10">
+                        <a href="https://wuzongjin.github.io/"> https://wuzongjin.github.io/</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
