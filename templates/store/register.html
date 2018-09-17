@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="register">
 		<h1>注册</h1>
-		  	  <form action="{% url 'store/register' %}" method="post">
+		  	  <form action="{% url 'store:register' %}" method="post">
                  {% csrf_token %}
 				 <div class="col-md-6  register-top-grid">
 					<div class="mation">

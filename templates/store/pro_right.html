@@ -4,10 +4,10 @@
             {% for hot in hot_list %}
             <div class="product-go">
                 <div class=" fashion-grid">
-                    <a href="{% url 'store/detail' %}?did={{ hot.id }}"><img class="img-responsive " src="{{ MEDIA_URL }}{{ hot.image_url_i }}" alt=""></a>
+                    <a href="{% url 'store:detail' %}?did={{ hot.id }}"><img class="img-responsive " src="{{ MEDIA_URL }}{{ hot.image_url_i }}" alt=""></a>
                 </div>
                 <div class=" fashion-grid1">
-                    <h6 class="best2"><a href="{% url 'store/detail' %}?did={{ hot.id }}" >{{ hot.name }}</a></h6>
+                    <h6 class="best2"><a href="{% url 'store:detail' %}?did={{ hot.id }}" >{{ hot.name }}</a></h6>
                     <span class=" price-in1">{{ hot.new_price }}元</span>
                     <span class=" best2">已卖出{{ hot.sales }}件</span>
                 </div>
@@ -20,7 +20,7 @@
             <div class="tags">
                 <ul>
                     {% for tag in tag_list %}
-                    <li><a href="{% url 'store/tags' %}?tid={{ tag.id }}">{{ tag.name }}</a></li>
+                    <li><a href="{% url 'store:tags' %}?tid={{ tag.id }}">{{ tag.name }}</a></li>
                     {% endfor %}
                 <div class="clearfix"> </div>
                 </ul>

@@ -11,12 +11,12 @@ from operator import itemgetter
 IDX_FREQ_I = 0
 IDX_TIME_J = 1
 
-DEFAULT_FS = 44100
+DEFAULT_FS = 11025
 DEFAULT_WINDOW_SIZE = 4096
 DEFAULT_OVERLAP_RATIO = 0.5
-DEFAULT_FAN_VALUES = 15
-DEFAULT_AMP_MIN = 10
-PEAK_NEIGHBORHOOD_SIZE = 20
+DEFAULT_FAN_VALUES = 10
+DEFAULT_AMP_MIN = 40
+PEAK_NEIGHBORHOOD_SIZE = 40
 MIN_HASH_TIME_DELTA = 0
 MAX_HASH_TIME_DELTA = 200
 
@@ -46,7 +46,7 @@ def fingerprint(channel_samples, Fs=DEFAULT_FS,
 
 def get_2D_peaks(arr2D,amp_min=DEFAULT_AMP_MIN):
 
-    struct = generate_binary_structure(2,1)
+    struct = generate_binary_structure(2, 1)
     neighborhood = iterate_structure(struct, PEAK_NEIGHBORHOOD_SIZE)
 
     local_max = maximum_filter(arr2D, footprint=neighborhood) == arr2D
@@ -83,7 +83,7 @@ def generate_hashes(peaks, fan_value=DEFAULT_FAN_VALUES):
                 t_delta = t2 - t1
 
                 if t_delta >= MIN_HASH_TIME_DELTA and t_delta <= MAX_HASH_TIME_DELTA:
-                    value = (str(freq1)+str(freq2)+str(t_delta)).encode('utf-8')
+                    value = (str(freq1)+"|" +str(freq2) + "|"+str(t_delta)).encode('utf-8')
                     h = hashlib.sha1(value)
                     yield (h.hexdigest()[0:FINGERPRINT_REDUCTION], t1)
 

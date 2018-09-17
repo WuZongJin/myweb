@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class Song(models.Model):
-    name = models.CharField(max_length=30, verbose_name="歌曲名字")
+    name = models.CharField(max_length=80, verbose_name="歌曲名字")
     file_sha1 = models.BinaryField(max_length=20, verbose_name="文件sha1")
-    fingerprinted = models.BooleanField(verbose_name="是否已被记录")
+    fingerprinted = models.BooleanField(default=0, verbose_name="是否已被记录")
 
     class Meta:
         verbose_name = "歌曲详情"

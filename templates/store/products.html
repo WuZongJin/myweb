@@ -18,13 +18,13 @@
                     {% for clo in clo_list %}
                     <div class="col-md-4 col-md3">
                         <div class="col-md1 simpleCart_shelfItem">
-                            <a href="{% url 'store/detail' %}?did={{ clo.id }}">
+                            <a href="{% url 'store:detail' %}?did={{ clo.id }}">
                                 <img class="img-responsive" src="{{ MEDIA_URL }}{{ clo.image_url_i }}" alt="" />
                             </a>
-                            <h3><a href="{% url 'store/detail' %}?did={{ clo.id }}">{{ clo.brand.name }}</a></h3>
+                            <h3><a href="{% url 'store:detail' %}?did={{ clo.id }}">{{ clo.brand.name }}</a></h3>
                             <div class="price">
                                     <h5 class="item_price">{{ clo.new_price }}元</h5>
-                                    <a href="{% url 'store/add_cart' %}?cid={{ clo.id }}" class="item_add">放入购物车</a>
+                                    <a href="{% url 'store:add_cart' %}?cid={{ clo.id }}" class="item_add">放入购物车</a>
                                     <div class="clearfix"> </div>
                             </div>
                         </div>
